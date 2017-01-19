@@ -43,6 +43,13 @@ namespace funWithMatt.Controllers
 
         }
 
+        public ActionResult Read()
+        {
+            FunClassFun.DatabaseExamples.ReadAllUsers();
+
+            return View();
+        }
+
        
     }
 }

@@ -54,6 +54,19 @@ namespace FunClassFun
                 var cmd = new SqlCommand("sp_ReadFunUser", conn);
 
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        var email = reader["email"];
+                        var userID = reader["userID"];
+                        int stophere = 7;
+                    }
+                }
+                reader.Close();
             }
         }
     }
