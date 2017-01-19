@@ -1,0 +1,8 @@
+CREATE TABLE dbo.userData
+(
+	userID INT IDENTITY (1,1) NOT NULL,
+	email NVARCHAR (100),
+	passwordHash BINARY (64),
+	CONSTRAINT [PK_userData_userID] PRIMARY KEY CLUSTERED (userID ASC)
+
+)
