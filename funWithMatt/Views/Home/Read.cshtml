@@ -1,0 +1,21 @@
+﻿@model List<FunClassFun.User>
+
+@{
+    ViewBag.Title = "Read";
+}
+
+<h2>Read</h2>
+
+<p>Count: @Model.Count</p>
+
+<ul>
+    
+    @foreach (var user in Model)
+    {
+        <li>@user.Email</li>
+    }
+
+
+
+</ul>
+

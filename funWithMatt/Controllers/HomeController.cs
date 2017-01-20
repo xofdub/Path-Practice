@@ -45,9 +45,10 @@ namespace funWithMatt.Controllers
 
         public ActionResult Read()
         {
-            FunClassFun.DatabaseExamples.ReadAllUsers();
 
-            return View();
+           var users =  FunClassFun.DatabaseExamples.ReadAllUsers();
+
+            return View(users);
         }
 
        

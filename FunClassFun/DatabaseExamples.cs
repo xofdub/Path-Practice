@@ -45,8 +45,10 @@ namespace FunClassFun
 
         }
 
-        public static void ReadAllUsers()
+        public static List<User> ReadAllUsers()
         {
+            var users = new List<User>();
+
             using (var conn = new SqlConnection(ConnectionString))
             {
                 conn.Open();
@@ -61,13 +63,23 @@ namespace FunClassFun
                 {
                     while (reader.Read())
                     {
-                        var email = reader["email"];
-                        var userID = reader["userID"];
+                        var email = reader["email"].ToString();
+                        var userID = Convert.ToInt32(reader["userID"]);
                         int stophere = 7;
+
+                        var user = new User();
+                        user.Email = email;
+                        user.UserID = userID;
+
+                        users.Add(user);
+
+            
                     }
                 }
                 reader.Close();
             }
+
+            return users;
         }
     }
 }
